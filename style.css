@@ -1,0 +1,692 @@
+/* ==========================
+   RESET
+========================== */
+
+* {
+
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+
+}
+
+
+body {
+
+    background:#050505;
+
+    color:#e5e5e5;
+
+    font-family:"Segoe UI", Arial, Helvetica, sans-serif;
+
+}
+
+
+
+/* ==========================
+   HERO
+========================== */
+
+
+.hero {
+
+    min-height:90vh;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:flex-start;
+
+    padding:80px 12%;
+
+    border-bottom:1px solid #1a1a1a;
+
+}
+
+
+
+
+
+.hero h1 {
+
+
+    font-size:78px;
+
+    font-weight:700;
+
+    letter-spacing:-3px;
+
+    color:#ffffff;
+
+    margin-bottom:20px;
+
+}
+
+
+
+.hero h1::after {
+
+
+    content:"";
+
+    display:block;
+
+    width:120px;
+
+    height:3px;
+
+    background:#470000;
+
+    margin-top:25px;
+
+    box-shadow:0 0 20px #470000;
+
+}
+
+
+
+
+
+
+.hero h2 {
+
+
+    margin-top:35px;
+
+    max-width:900px;
+
+    font-size:32px;
+
+    font-weight:400;
+
+    color:#470000;
+
+    letter-spacing:-0.5px;
+
+
+}
+
+
+
+
+
+
+
+.hero p {
+
+
+    margin-top:35px;
+
+    max-width:850px;
+
+    font-size:20px;
+
+    line-height:1.8;
+
+    color:#a0a0a0;
+
+}
+
+
+
+
+/* cursor */
+
+
+.hero p::after {
+
+
+    content:"|";
+
+    margin-left:6px;
+
+    color:#470000;
+
+    animation:cursor 1s infinite;
+
+
+}
+
+
+
+@keyframes cursor {
+
+
+    50%{
+
+        opacity:0;
+
+    }
+
+}
+
+
+
+
+
+
+/* ==========================
+   BOTÃO
+========================== */
+
+
+.hero a {
+
+
+    margin-top:45px;
+
+    padding:15px 40px;
+
+    border:1px solid #470000;
+
+    border-radius:8px;
+
+    color:white;
+
+    text-decoration:none;
+
+    transition:.3s;
+
+
+}
+
+
+
+.hero a:hover {
+
+
+    background:#470000;
+
+    box-shadow:0 0 30px rgba(71,0,0,.8);
+
+}
+
+
+
+
+
+/* ==========================
+   PROJETOS
+========================== */
+
+
+.projetos {
+
+
+    padding:100px 12%;
+
+
+}
+
+
+
+.projetos > h2 {
+
+
+    font-size:52px;
+
+    color:white;
+
+    margin-bottom:60px;
+
+}
+
+
+
+
+
+.cards {
+
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+
+    gap:35px;
+
+
+}
+
+
+
+
+
+
+
+/* ==========================
+   CARDS
+========================== */
+
+
+.card {
+
+
+    background:#090909;
+
+    border:1px solid #252525;
+
+    border-radius:14px;
+
+    padding:35px;
+
+    text-decoration:none;
+
+    color:white;
+
+    transition:.4s;
+
+    position:relative;
+
+    overflow:hidden;
+
+
+}
+
+
+
+
+
+.card::before {
+
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    top:0;
+
+    width:3px;
+
+    height:0%;
+
+    background:#470000;
+
+    transition:.4s;
+
+
+}
+
+
+
+
+
+.card:hover::before {
+
+
+    height:100%;
+
+
+}
+
+
+
+
+
+.card:hover {
+
+
+    transform:translateY(-10px);
+
+    border-color:#470000;
+
+    box-shadow:0 15px 35px rgba(0,0,0,.8);
+
+
+}
+
+
+
+
+
+.card h3 {
+
+
+    font-size:26px;
+
+    color:white;
+
+    margin-bottom:20px;
+
+
+}
+
+
+
+
+
+.card p {
+
+
+    color:#999;
+
+    line-height:1.8;
+
+
+}
+
+
+
+
+
+
+/* ==========================
+   DETALHES DO PROJETO
+========================== */
+
+
+.projeto-detalhes {
+
+
+    max-width:1200px;
+
+    padding:80px 12%;
+
+
+}
+
+
+
+
+
+.projeto-detalhes h2 {
+
+
+    margin-top:75px;
+
+    margin-bottom:25px;
+
+    font-size:36px;
+
+    color:white;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+
+}
+
+
+
+
+
+/* ÍCONE ◈ */
+
+
+.section-icon {
+
+
+    color:#470000;
+
+    font-size:28px;
+
+    display:inline-block;
+
+    transition:.4s;
+
+    text-shadow:0 0 15px rgba(71,0,0,.8);
+
+
+}
+
+
+
+
+
+.projeto-detalhes h2:hover .section-icon {
+
+
+    transform:rotate(45deg);
+
+    color:#700000;
+
+
+}
+
+
+
+
+
+
+
+.projeto-detalhes p {
+
+
+    max-width:1000px;
+
+    color:#b0b0b0;
+
+    font-size:18px;
+
+    line-height:1.9;
+
+    margin-bottom:25px;
+
+
+}
+
+
+
+
+
+
+
+.projeto-detalhes ul {
+
+
+    margin-left:25px;
+
+    color:#999;
+
+    line-height:2;
+
+
+}
+
+
+
+
+.projeto-detalhes li {
+
+
+    margin-bottom:8px;
+
+
+}
+
+
+
+
+.projeto-detalhes strong {
+
+
+    color:white;
+
+
+}
+
+
+
+
+
+
+/* ==========================
+   TAGS
+========================== */
+
+
+.tags {
+
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:15px;
+
+    margin-top:30px;
+
+
+}
+
+
+
+
+
+.tags span {
+
+
+    background:#080808;
+
+    border:1px solid #333;
+
+    padding:10px 20px;
+
+    border-radius:30px;
+
+    color:#ccc;
+
+    transition:.3s;
+
+
+}
+
+
+
+
+
+.tags span:hover {
+
+
+    border-color:#470000;
+
+    color:white;
+
+    box-shadow:0 0 20px rgba(71,0,0,.6);
+
+
+}
+
+
+
+
+
+
+/* ==========================
+   VOLTAR
+========================== */
+
+
+.voltar {
+
+
+    display:inline-block;
+
+    margin-top:60px;
+
+    padding:14px 35px;
+
+    border:1px solid #470000;
+
+    border-radius:8px;
+
+    color:white;
+
+    text-decoration:none;
+
+    transition:.3s;
+
+
+}
+
+
+
+
+
+.voltar:hover {
+
+
+    background:#470000;
+
+    box-shadow:0 0 25px rgba(71,0,0,.8);
+
+
+}
+
+
+
+
+
+
+/* ==========================
+   RESPONSIVO
+========================== */
+
+
+@media(max-width:768px){
+
+
+.hero{
+
+    padding:60px 8%;
+
+}
+
+
+
+.hero h1{
+
+    font-size:45px;
+
+}
+
+
+
+.hero h2{
+
+    font-size:22px;
+
+}
+
+
+
+.hero p{
+
+    font-size:17px;
+
+}
+
+
+
+.projetos{
+
+    padding:60px 8%;
+
+}
+
+
+
+.projeto-detalhes{
+
+    padding:60px 8%;
+
+}
+
+
+
+.projeto-detalhes h2{
+
+    font-size:28px;
+
+}
+
+
+
+}
