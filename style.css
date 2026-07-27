@@ -1,6 +1,20 @@
 /* ==========================
-   RESET
+   RESET / VARIAVEIS
 ========================== */
+
+:root {
+    --bg: #050505;
+    --bg-card: #0a0a0a;
+    --border: #252525;
+    --text: #e5e5e5;
+    --text-muted: #a0a0a0;
+    --text-dim: #999;
+    --accent: #8b0000;
+    --accent-strong: #b30000;
+    --accent-glow: rgba(139, 0, 0, 0.6);
+    --max-width: 1200px;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -12,9 +26,10 @@ html {
 }
 
 body {
-    background: #050505;
-    color: #e5e5e5;
+    background: var(--bg);
+    color: var(--text);
     font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+    line-height: 1.6;
 }
 
 a {
@@ -24,51 +39,53 @@ a {
 /* ==========================
    NAVBAR
 ========================== */
+
 .navbar {
     position: sticky;
     top: 0;
     z-index: 100;
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    padding: 18px 12%;
+    align-items: center;
+    padding: 20px 12%;
     background: rgba(5, 5, 5, 0.85);
-    backdrop-filter: blur(8px);
+    backdrop-filter: blur(10px);
     border-bottom: 1px solid #1a1a1a;
 }
 
 .navbar .logo {
-    font-size: 22px;
+    font-size: 20px;
     font-weight: 700;
-    color: #ffffff;
+    color: #fff;
     text-decoration: none;
-    letter-spacing: -1px;
+    letter-spacing: -0.5px;
 }
 
 .navbar .logo span {
-    color: #b0201f;
+    color: var(--accent-strong);
 }
 
-.navbar nav {
+.nav-links {
     display: flex;
-    gap: 28px;
-    flex-wrap: wrap;
+    gap: 30px;
+    list-style: none;
 }
 
-.navbar nav a {
-    color: #c9c9c9;
+.nav-links a {
     text-decoration: none;
-    font-size: 16px;
-    transition: color 0.3s;
+    color: var(--text-muted);
+    font-size: 15px;
+    transition: 0.3s;
 }
 
-.navbar nav a:hover {
-    color: #ffffff;
+.nav-links a:hover {
+    color: #fff;
 }
 
 /* ==========================
    HERO
 ========================== */
+
 .hero {
     min-height: 88vh;
     display: flex;
@@ -83,7 +100,7 @@ a {
     font-size: 78px;
     font-weight: 700;
     letter-spacing: -3px;
-    color: #ffffff;
+    color: #fff;
     margin-bottom: 20px;
 }
 
@@ -92,134 +109,134 @@ a {
     display: block;
     width: 120px;
     height: 3px;
-    background: #b0201f;
+    background: var(--accent);
     margin-top: 25px;
-    box-shadow: 0 0 20px rgba(176, 32, 31, 0.7);
+    box-shadow: 0 0 20px var(--accent-glow);
 }
 
-/* subtítulo (corrigido: agora estiliza .subtitulo, que é o que existe no HTML) */
 .hero .subtitulo {
     margin-top: 35px;
     max-width: 900px;
     font-size: 30px;
     font-weight: 400;
-    color: #e08a89;
+    color: #d94a4a;
     letter-spacing: -0.5px;
 }
 
-.hero .intro {
+.hero p.intro {
     margin-top: 35px;
     max-width: 850px;
     font-size: 20px;
     line-height: 1.8;
-    color: #b8b8b8;
-    min-height: 3.6em;
+    color: var(--text-muted);
+    min-height: 1.8em;
 }
 
-/* cursor só aparece durante a digitação (classe .typing via JS) */
-.hero .intro.typing::after {
+.typing::after {
     content: "|";
-    margin-left: 6px;
-    color: #b0201f;
+    margin-left: 4px;
+    color: var(--accent-strong);
     animation: cursor 1s infinite;
 }
 
 @keyframes cursor {
-    50% {
-        opacity: 0;
-    }
+    50% { opacity: 0; }
 }
 
 /* ==========================
-   BOTÕES
+   BOTOES
 ========================== */
-.hero .acoes {
+
+.btn-group {
     display: flex;
-    gap: 18px;
     flex-wrap: wrap;
+    gap: 18px;
     margin-top: 45px;
 }
 
 .btn {
     padding: 15px 40px;
-    border: 1px solid #b0201f;
+    border: 1px solid var(--accent);
     border-radius: 8px;
-    color: white;
+    color: #fff;
     text-decoration: none;
     transition: 0.3s;
     display: inline-block;
 }
 
 .btn:hover {
-    background: #b0201f;
-    box-shadow: 0 0 30px rgba(176, 32, 31, 0.6);
+    background: var(--accent);
+    box-shadow: 0 0 30px var(--accent-glow);
 }
 
-.btn-secundario {
-    border-color: #444;
+.btn-primary {
+    background: var(--accent);
 }
 
-.btn-secundario:hover {
-    background: #1a1a1a;
-    border-color: #888;
-    box-shadow: none;
+.btn-primary:hover {
+    background: var(--accent-strong);
 }
 
 /* ==========================
-   SEÇÕES GENÉRICAS
+   SECOES GENERICAS
 ========================== */
-section {
-    padding: 100px 12%;
+
+.secao {
+    padding: 90px 12%;
+    border-bottom: 1px solid #111;
 }
 
-.titulo-secao {
-    font-size: 52px;
-    color: white;
+.secao > h2 {
+    font-size: 46px;
+    color: #fff;
     margin-bottom: 40px;
-}
-
-/* ==========================
-   SOBRE
-========================== */
-.sobre {
-    border-bottom: 1px solid #1a1a1a;
+    letter-spacing: -1px;
 }
 
 .sobre p {
-    max-width: 900px;
-    color: #b8b8b8;
+    max-width: 850px;
     font-size: 19px;
     line-height: 1.9;
+    color: var(--text-muted);
     margin-bottom: 22px;
 }
 
-.sobre .skills {
+.sobre .destaques {
     display: flex;
     flex-wrap: wrap;
-    gap: 14px;
+    gap: 15px;
     margin-top: 30px;
 }
 
-.sobre .skills span {
-    background: #0c0c0c;
+.sobre .destaques span {
+    background: var(--bg-card);
     border: 1px solid #333;
     padding: 10px 20px;
     border-radius: 30px;
-    color: #d0d0d0;
+    color: #ccc;
     transition: 0.3s;
 }
 
-.sobre .skills span:hover {
-    border-color: #b0201f;
-    color: white;
-    box-shadow: 0 0 20px rgba(176, 32, 31, 0.5);
+.sobre .destaques span:hover {
+    border-color: var(--accent);
+    color: #fff;
+    box-shadow: 0 0 20px var(--accent-glow);
 }
 
 /* ==========================
    PROJETOS
 ========================== */
+
 .projetos {
-    border-bottom: 1px solid #1a1a1a;
+    padding: 90px 12%;
+    border-bottom: 1px solid #111;
+}
+
+.projetos > h2 {
+    font-size: 52px;
+    color: #fff;
+    margin-bottom: 60px;
+    letter-spacing: -1px;
 }
 
 .cards {
@@ -231,13 +248,14 @@ section {
 /* ==========================
    CARDS
 ========================== */
+
 .card {
     background: #090909;
-    border: 1px solid #252525;
+    border: 1px solid var(--border);
     border-radius: 14px;
     padding: 35px;
     text-decoration: none;
-    color: white;
+    color: #fff;
     transition: 0.4s;
     position: relative;
     overflow: hidden;
@@ -250,7 +268,7 @@ section {
     top: 0;
     width: 3px;
     height: 0%;
-    background: #b0201f;
+    background: var(--accent);
     transition: 0.4s;
 }
 
@@ -260,48 +278,60 @@ section {
 
 .card:hover {
     transform: translateY(-10px);
-    border-color: #b0201f;
+    border-color: var(--accent);
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.8);
 }
 
 .card h3 {
     font-size: 26px;
-    color: white;
+    color: #fff;
     margin-bottom: 20px;
 }
 
 .card p {
-    color: #a8a8a8;
+    color: var(--text-dim);
     line-height: 1.8;
 }
 
 /* ==========================
    CONTATO
 ========================== */
-.contato {
-    text-align: center;
-}
 
 .contato p {
     max-width: 700px;
-    margin: 0 auto 40px;
-    color: #b8b8b8;
     font-size: 19px;
+    color: var(--text-muted);
+    margin-bottom: 35px;
     line-height: 1.8;
 }
 
-.contato .links {
+.contato-links {
     display: flex;
-    justify-content: center;
-    gap: 18px;
     flex-wrap: wrap;
+    gap: 18px;
+}
+
+.contato-links a {
+    padding: 14px 32px;
+    border: 1px solid #333;
+    border-radius: 8px;
+    color: #fff;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.contato-links a:hover {
+    border-color: var(--accent);
+    background: var(--accent);
+    box-shadow: 0 0 25px var(--accent-glow);
 }
 
 /* ==========================
    DETALHES DO PROJETO
 ========================== */
+
 .projeto-detalhes {
-    max-width: 1200px;
+    max-width: var(--max-width);
     padding: 80px 12%;
 }
 
@@ -309,28 +339,28 @@ section {
     margin-top: 75px;
     margin-bottom: 25px;
     font-size: 36px;
-    color: white;
+    color: #fff;
     display: flex;
     align-items: center;
     gap: 15px;
 }
 
 .section-icon {
-    color: #b0201f;
+    color: var(--accent);
     font-size: 28px;
     display: inline-block;
     transition: 0.4s;
-    text-shadow: 0 0 15px rgba(176, 32, 31, 0.7);
+    text-shadow: 0 0 15px var(--accent-glow);
 }
 
 .projeto-detalhes h2:hover .section-icon {
     transform: rotate(45deg);
-    color: #d63230;
+    color: var(--accent-strong);
 }
 
 .projeto-detalhes p {
     max-width: 1000px;
-    color: #b8b8b8;
+    color: #b0b0b0;
     font-size: 18px;
     line-height: 1.9;
     margin-bottom: 25px;
@@ -338,7 +368,7 @@ section {
 
 .projeto-detalhes ul {
     margin-left: 25px;
-    color: #a8a8a8;
+    color: var(--text-dim);
     line-height: 2;
 }
 
@@ -347,12 +377,13 @@ section {
 }
 
 .projeto-detalhes strong {
-    color: white;
+    color: #fff;
 }
 
 /* ==========================
    TAGS
 ========================== */
+
 .tags {
     display: flex;
     flex-wrap: wrap;
@@ -361,64 +392,63 @@ section {
 }
 
 .tags span {
-    background: #0c0c0c;
+    background: var(--bg-card);
     border: 1px solid #333;
     padding: 10px 20px;
     border-radius: 30px;
-    color: #d0d0d0;
+    color: #ccc;
     transition: 0.3s;
 }
 
 .tags span:hover {
-    border-color: #b0201f;
-    color: white;
-    box-shadow: 0 0 20px rgba(176, 32, 31, 0.5);
+    border-color: var(--accent);
+    color: #fff;
+    box-shadow: 0 0 20px var(--accent-glow);
 }
 
 /* ==========================
-   VOLTAR
+   BOTAO VOLTAR
 ========================== */
+
 .voltar {
     display: inline-block;
     margin-top: 60px;
     padding: 14px 35px;
-    border: 1px solid #b0201f;
+    border: 1px solid var(--accent);
     border-radius: 8px;
-    color: white;
+    color: #fff;
     text-decoration: none;
     transition: 0.3s;
 }
 
 .voltar:hover {
-    background: #b0201f;
-    box-shadow: 0 0 25px rgba(176, 32, 31, 0.7);
+    background: var(--accent);
+    box-shadow: 0 0 25px var(--accent-glow);
 }
 
 /* ==========================
-   RODAPÉ
+   RODAPE
 ========================== */
+
 footer {
     padding: 40px 12%;
+    text-align: center;
+    color: #666;
     border-top: 1px solid #1a1a1a;
-    color: #777;
-    font-size: 15px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 16px;
 }
 
 footer .footer-links {
     display: flex;
-    gap: 20px;
+    justify-content: center;
+    gap: 25px;
+    margin-bottom: 18px;
     flex-wrap: wrap;
 }
 
 footer .footer-links a {
-    color: #999;
+    color: var(--text-muted);
     text-decoration: none;
-    transition: color 0.3s;
+    transition: 0.3s;
 }
 
 footer .footer-links a:hover {
@@ -428,47 +458,22 @@ footer .footer-links a:hover {
 /* ==========================
    RESPONSIVO
 ========================== */
+
 @media (max-width: 768px) {
-    .navbar {
-        padding: 14px 6%;
-        flex-direction: column;
-        gap: 12px;
-    }
+    .navbar { padding: 16px 6%; }
+    .nav-links { gap: 18px; }
+    .nav-links a { font-size: 14px; }
 
-    .hero {
-        padding: 60px 8%;
-    }
+    .hero { padding: 60px 8%; }
+    .hero h1 { font-size: 45px; }
+    .hero .subtitulo { font-size: 22px; }
+    .hero p.intro { font-size: 17px; }
 
-    .hero h1 {
-        font-size: 45px;
-    }
+    .secao,
+    .projetos { padding: 60px 8%; }
+    .secao > h2 { font-size: 34px; }
+    .projetos > h2 { font-size: 38px; }
 
-    .hero .subtitulo {
-        font-size: 22px;
-    }
-
-    .hero .intro {
-        font-size: 17px;
-    }
-
-    section {
-        padding: 60px 8%;
-    }
-
-    .titulo-secao {
-        font-size: 36px;
-    }
-
-    .projeto-detalhes {
-        padding: 60px 8%;
-    }
-
-    .projeto-detalhes h2 {
-        font-size: 28px;
-    }
-
-    footer {
-        flex-direction: column;
-        text-align: center;
-    }
+    .projeto-detalhes { padding: 60px 8%; }
+    .projeto-detalhes h2 { font-size: 28px; }
 }
