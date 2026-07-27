@@ -1,29 +1,36 @@
-/* ==========================================
-   Efeito de digitação no parágrafo do hero
-========================================== */
+/* =========================================================
+   Portfolio - Tyler Canto
+   Efeito de digitacao no hero + ano dinamico no rodape
+========================================================= */
 
 document.addEventListener("DOMContentLoaded", () => {
-    const alvo = document.querySelector(".hero p.intro");
-    if (!alvo) return;
+    // ---- Efeito de digitacao (typing) ----
+    const alvo = document.querySelector(".intro");
 
-    const texto = alvo.textContent.trim();
-    alvo.textContent = "";
-    alvo.classList.add("typing");
+    if (alvo) {
+        const texto = alvo.dataset.texto || alvo.textContent.trim();
+        alvo.textContent = "";
+        alvo.classList.add("typing");
 
-    let i = 0;
-    const velocidade = 22; // ms por caractere
+        let i = 0;
+        const velocidade = 22; // ms por caractere
 
-    function digitar() {
-        if (i < texto.length) {
-            alvo.textContent += texto.charAt(i);
-            i++;
-            setTimeout(digitar, velocidade);
-        } else {
-            // mantém o cursor piscando por um tempo e depois remove
-            setTimeout(() => alvo.classList.remove("typing"), 2500);
-        }
+        const digitar = () => {
+            if (i < texto.length) {
+                alvo.textContent += texto.charAt(i);
+                i++;
+                setTimeout(digitar, velocidade);
+            } else {
+                setTimeout(() => alvo.classList.remove("typing"), 1500);
+            }
+        };
+
+        digitar();
     }
 
-    // pequeno atraso antes de começar
-    setTimeout(digitar, 400);
+    // ---- Ano dinamico no rodape ----
+    const ano = document.querySelector("#ano");
+    if (ano) {
+        ano.textContent = new Date().getFullYear();
+    }
 });
