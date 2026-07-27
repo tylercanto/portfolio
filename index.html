@@ -19,6 +19,17 @@
 
 <body>
 
+    <!-- ============ NAVBAR ============ -->
+    <nav class="navbar">
+        <a href="#" class="logo">Tyler<span>Canto</span></a>
+        <ul class="nav-links">
+            <li><a href="#sobre">Sobre</a></li>
+            <li><a href="#projetos">Projetos</a></li>
+            <li><a href="#contato">Contato</a></li>
+        </ul>
+    </nav>
+
+    <!-- ============ HERO ============ -->
     <header class="hero">
         <h1>Tyler Canto</h1>
 
@@ -26,16 +37,50 @@
             Infraestrutura • Backup Corporativo • Segurança da Informação
         </p>
 
-        <p>
-            Profissional de infraestrutura com atuação em ambientes
-            corporativos, envolvendo virtualização, soluções de backup,
-            redes, Linux e segurança de dados.
+        <p class="intro" data-texto="Profissional de infraestrutura com atuação em ambientes corporativos, envolvendo virtualização, soluções de backup, redes, Linux e segurança de dados.">
+            Profissional de infraestrutura com atuação em ambientes corporativos, envolvendo virtualização, soluções de backup, redes, Linux e segurança de dados.
         </p>
 
-        <a href="#projetos">Explorar Projetos</a>
+        <div class="btn-group">
+            <a href="#projetos" class="btn btn-primary">Explorar Projetos</a>
+            <a href="#contato" class="btn">Entrar em Contato</a>
+        </div>
     </header>
 
     <main>
+
+        <!-- ============ SOBRE ============ -->
+        <section id="sobre" class="secao sobre">
+            <h2>Sobre</h2>
+            <p>
+                Atuo com infraestrutura de TI em ambientes corporativos, com foco em
+                proteção de dados, virtualização e continuidade operacional. Meu trabalho
+                envolve o desenho e a implementação de estratégias de backup, a
+                estruturação de redes seguras e a automação de rotinas para reduzir
+                falhas e ganhar eficiência operacional.
+            </p>
+            <p>
+                Tenho experiência com soluções como Bacula Enterprise, Acronis, Proxmox VE
+                e Hyper-V, além de conectividade segura com pfSense e VPN Site-to-Site,
+                sempre buscando ambientes confiáveis, padronizados e preparados para
+                crescer.
+            </p>
+
+            <div class="destaques">
+                <span>Linux</span>
+                <span>Backup Corporativo</span>
+                <span>Bacula Enterprise</span>
+                <span>Proxmox VE</span>
+                <span>Hyper-V</span>
+                <span>pfSense</span>
+                <span>VPN Site-to-Site</span>
+                <span>Active Directory</span>
+                <span>Shell Script</span>
+                <span>Segurança da Informação</span>
+            </div>
+        </section>
+
+        <!-- ============ PROJETOS ============ -->
         <section id="projetos" class="projetos">
             <h2>Projetos</h2>
 
@@ -97,11 +142,31 @@
 
             </div>
         </section>
+
+        <!-- ============ CONTATO ============ -->
+        <section id="contato" class="secao contato">
+            <h2>Contato</h2>
+            <p>
+                Interessado em conversar sobre infraestrutura, backup ou segurança da
+                informação? Fique à vontade para entrar em contato pelos canais abaixo.
+            </p>
+            <div class="contato-links">
+                <a href="mailto:tylercanto23@gmail.com">E-mail</a>
+                <a href="https://www.linkedin.com/in/tyler-canto/" target="_blank" rel="noopener">LinkedIn</a>
+                <a href="https://github.com/tylercanto" target="_blank" rel="noopener">GitHub</a>
+            </div>
+        </section>
+
     </main>
 
+    <!-- ============ RODAPÉ ============ -->
     <footer>
-        <p>&copy; 2026 Tyler Canto. Todos os direitos reservados.</p>
-        <!-- sugestão: adicionar links de contato/LinkedIn/GitHub aqui -->
+        <div class="footer-links">
+            <a href="mailto:tylercanto23@gmail.com">E-mail</a>
+            <a href="https://www.linkedin.com/in/tyler-canto/" target="_blank" rel="noopener">LinkedIn</a>
+            <a href="https://github.com/tylercanto" target="_blank" rel="noopener">GitHub</a>
+        </div>
+        <p>&copy; <span id="ano">2026</span> Tyler Canto. Todos os direitos reservados.</p>
     </footer>
 
     <script src="script.js" defer></script>
