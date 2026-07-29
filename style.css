@@ -1,294 +1,649 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+/* ==========================
+   RESET / VARIAVEIS
+========================== */
 
-    <title>Tyler Canto | Infraestrutura e Backup</title>
-    <meta name="description" content="Portfólio de Tyler Canto — profissional de infraestrutura corporativa, especializado em virtualização, backup, redes, Linux e segurança da informação.">
+:root {
+    --bg: #050505;
+    --bg-card: #0a0a0a;
+    --border: #252525;
+    --text: #e5e5e5;
+    --text-muted: #a0a0a0;
+    --text-dim: #999;
+    --accent: #8b0000;
+    --accent-strong: #b30000;
+    --accent-glow: rgba(139, 0, 0, 0.6);
+    --max-width: 1200px;
+}
 
-    <!-- Open Graph / compartilhamento em redes sociais -->
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Tyler Canto | Infraestrutura e Backup">
-    <meta property="og:description" content="Projetos de infraestrutura corporativa: virtualização, backup, redes e segurança da informação.">
-    <meta property="og:locale" content="pt_BR">
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-    <link rel="icon" href="favicon.ico">
-    <link rel="stylesheet" href="style.css">
-</head>
+html {
+    scroll-behavior: smooth;
+}
 
-<body>
+body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+}
 
-    <!-- NAVBAR -->
-    <nav class="navbar">
-        <a href="#topo" class="logo">Tyler<span>.</span>Canto</a>
-        <ul class="nav-links">
-            <li><a href="#sobre">Sobre</a></li>
-            <li><a href="#projetos">Projetos</a></li>
-            <li><a href="#feedbacks">Feedbacks</a></li>
-            <li><a href="#contato">Contato</a></li>
-        </ul>
-    </nav>
+a {
+    color: inherit;
+}
 
-    <!-- HERO -->
-    <header class="hero" id="topo">
-        <h1>Tyler Canto</h1>
+/* ==========================
+   NAVBAR
+========================== */
 
-        <p class="subtitulo">
-            Infraestrutura • Backup Corporativo • Segurança da Informação
-        </p>
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 12%;
+    background: rgba(5, 5, 5, 0.85);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid #1a1a1a;
+}
 
-        <p class="intro" data-texto="Profissional de infraestrutura com atuação em ambientes corporativos, envolvendo virtualização, soluções de backup, redes, Linux e segurança de dados.">
-            Profissional de infraestrutura com atuação em ambientes
-            corporativos, envolvendo virtualização, soluções de backup,
-            redes, Linux e segurança de dados.
-        </p>
+.navbar .logo {
+    font-size: 20px;
+    font-weight: 700;
+    color: #fff;
+    text-decoration: none;
+    letter-spacing: -0.5px;
+}
 
-        <div class="btn-group">
-            <a href="#projetos" class="btn btn-primary">Explorar Projetos</a>
-            <a href="#contato" class="btn">Entrar em Contato</a>
-        </div>
-    </header>
+.navbar .logo span {
+    color: var(--accent-strong);
+}
 
-    <main>
+.nav-links {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+}
 
-        <!-- SOBRE -->
-        <section id="sobre" class="secao sobre">
-            <h2>Sobre</h2>
-            <p>
-                Atuo com infraestrutura de TI em ambientes corporativos, com foco
-                em proteção de dados, virtualização e segurança. Meu trabalho
-                envolve planejar, implementar e manter ambientes confiáveis
-                de soluções de backup e recuperação a redes segmentadas, VPNs
-                site-to-site e continuidade operacional.
-            </p>
-            <p>
-                Trabalho tanto com soluções corporativas quanto open source,
-                buscando equilibrar custo, controle e confiabilidade. Cada
-                projeto abaixo representa um desafio real de infraestrutura
-                resolvido em produção.
-            </p>
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-muted);
+    font-size: 15px;
+    transition: 0.3s;
+}
 
-            <div class="skills">
+.nav-links a:hover {
+    color: #fff;
+}
 
-                <div class="skill-group">
-                    <h3>Virtualização</h3>
-                    <ul>
-                        <li>Proxmox VE</li>
-                        <li>Hyper-V</li>
-                        <li>Veeam</li>
-                    </ul>
-                </div>
+/* ==========================
+   HERO
+========================== */
 
-                <div class="skill-group">
-                    <h3>Backup &amp; Proteção de Dados</h3>
-                    <ul>
-                        <li>Bacula</li>
-                        <li>Acronis</li>
-                        <li>Nextcloud</li>
-                    </ul>
-                </div>
+.hero {
+    min-height: 88vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 80px 12%;
+    border-bottom: 1px solid #1a1a1a;
+}
 
-                <div class="skill-group">
-                    <h3>Redes &amp; Conectividade</h3>
-                    <ul>
-                        <li>pfSense</li>
-                        <li>Mikrotik</li>
-                        <li>VPN Site-to-Site</li>
-                        <li>Active Directory</li>
-                    </ul>
-                </div>
+.hero h1 {
+    font-size: 78px;
+    font-weight: 700;
+    letter-spacing: -3px;
+    color: #fff;
+    margin-bottom: 20px;
+}
 
-                <div class="skill-group">
-                    <h3>Sistemas &amp; Automação</h3>
-                    <ul>
-                        <li>Linux</li>
-                        <li>Windows</li>
-                        <li>Shell Script</li>
-                    </ul>
-                </div>
+.hero h1::after {
+    content: "";
+    display: block;
+    width: 120px;
+    height: 3px;
+    background: var(--accent);
+    margin-top: 25px;
+    box-shadow: 0 0 20px var(--accent-glow);
+}
 
-                <div class="skill-group">
-                    <h3>Monitoramento</h3>
-                    <ul>
-                        <li>Nagios</li>
-                        <li>Zabbix</li>
-                        <li>PRTG</li>
-                    </ul>
-                </div>
+.hero .subtitulo {
+    margin-top: 35px;
+    max-width: 900px;
+    font-size: 30px;
+    font-weight: 400;
+    color: #d94a4a;
+    letter-spacing: -0.5px;
+}
 
-                <div class="skill-group">
-                    <h3>Segurança</h3>
-                    <ul>
-                        <li>Identificação de incidentes</li>
-                        <li>Prevenção de incidentes</li>
-                        <li>Segurança da informação</li>
-                    </ul>
-                </div>
+.hero p.intro {
+    margin-top: 35px;
+    max-width: 850px;
+    font-size: 20px;
+    line-height: 1.8;
+    color: var(--text-muted);
+    min-height: 1.8em;
+}
 
-            </div>
-        </section>
+.typing::after {
+    content: "|";
+    margin-left: 4px;
+    color: var(--accent-strong);
+    animation: cursor 1s infinite;
+}
 
-        <!-- PROJETOS -->
-        <section id="projetos" class="projetos">
-            <h2>Projetos</h2>
+@keyframes cursor {
+    50% { opacity: 0; }
+}
 
-            <div class="cards">
+/* ==========================
+   BOTOES
+========================== */
 
-                <a href="laboratorio-c.html" class="card" aria-label="Ver detalhes do projeto: Laboratório de Análises">
-                    <h3>Laboratório de Análises</h3>
-                    <p>
-                        Migração de aproximadamente 140 bancos SQL do Acronis
-                        para Bacula Enterprise, utilizando VPN Site-to-Site,
-                        pfSense, Linux e automação com Shell Script.
-                    </p>
-                </a>
+.btn-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+    margin-top: 45px;
+}
 
-                <a href="cartorio-p.html" class="card" aria-label="Ver detalhes do projeto: Cartório de Registro Civil">
-                    <h3>Cartório de Registro Civil</h3>
-                    <p>
-                        Implementação de estratégia de backup corporativo com
-                        Bacula Enterprise, criptografia, auditoria, retenção
-                        e testes periódicos de restauração.
-                    </p>
-                </a>
+.btn {
+    padding: 15px 40px;
+    border: 1px solid var(--accent);
+    border-radius: 8px;
+    color: #fff;
+    text-decoration: none;
+    transition: 0.3s;
+    display: inline-block;
+}
 
-                <a href="vbrasil.html" class="card" aria-label="Ver detalhes do projeto: V Brasil / V Cobranças">
-                    <h3>V Brasil / V Cobranças</h3>
-                    <p>
-                        Estruturação de ambiente corporativo com VPN Site-to-Site,
-                        Active Directory, pfSense e gerenciamento de usuários,
-                        estações e políticas de acesso.
-                    </p>
-                </a>
+.btn:hover {
+    background: var(--accent);
+    box-shadow: 0 0 30px var(--accent-glow);
+}
 
-                <a href="universo-p.html" class="card" aria-label="Ver detalhes do projeto: Loja de Ferragens">
-                    <h3>Loja de Ferragens</h3>
-                    <p>
-                        Virtualização de servidores utilizando Hyper-V,
-                        implementação de Acronis, gerenciamento de rede Mikrotik
-                        e monitoramento com Nagios.
-                    </p>
-                </a>
+.btn-primary {
+    background: var(--accent);
+}
 
-                <a href="contabilidade-a.html" class="card" aria-label="Ver detalhes do projeto: Contabilidade">
-                    <h3>Contabilidade</h3>
-                    <p>
-                        Implementação de infraestrutura corporativa utilizando
-                        Proxmox VE, Bacula Enterprise e pfSense, com estratégia
-                        de backup, segurança de rede e continuidade operacional.
-                    </p>
-                </a>
+.btn-primary:hover {
+    background: var(--accent-strong);
+}
 
-                <a href="contabilidade-e.html" class="card" aria-label="Ver detalhes do projeto: Contabilidade E">
-                    <h3>Contabilidade E</h3>
-                    <p>
-                        Estruturação de ambiente virtualizado com proteção de
-                        dados, gerenciamento de backup corporativo e segurança
-                        da infraestrutura utilizando soluções open source.
-                    </p>
-                </a>
+/* ==========================
+   SECOES GENERICAS
+========================== */
 
-            </div>
-        </section>
+.secao {
+    padding: 90px 12%;
+    border-bottom: 1px solid #111;
+}
 
-<!-- FEEDBACKS -->
-<section id="feedbacks" class="secao feedbacks">
-    <h2>Feedbacks</h2>
+.secao > h2 {
+    font-size: 46px;
+    color: #fff;
+    margin-bottom: 40px;
+    letter-spacing: -1px;
+}
 
-    <div class="depoimentos">
+.sobre p {
+    max-width: 850px;
+    font-size: 19px;
+    line-height: 1.9;
+    color: var(--text-muted);
+    margin-bottom: 22px;
+}
 
-        <div class="depoimento">
-            <p>O que você fez agora, foi perfeito. Evidenciou o problema de forma incontestável.</p>
-            <div class="autor">
-                <div class="avatar">G</div>
-                <div>
-                    <div class="autor-nome">Gleisson L.</div>
-                    <div class="autor-desc">Suporte Técnico</div>
-                </div>
-            </div>
-        </div>
+/* ==========================
+   SKILLS (competencias)
+========================== */
 
-        <div class="depoimento">
-            <p>Seu atendimento é diferenciado, parabéns!!! Você entende do assunto!</p>
-            <div class="autor">
-                <div class="avatar">A</div>
-                <div>
-                    <div class="autor-nome">Angelo C. S.</div>
-                    <div class="autor-desc">Cliente</div>
-                </div>
-            </div>
-        </div>
+.skills {
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 22px;
+}
 
-        <div class="depoimento">
-            <p>Quando você me atende é só alegria. Obrigado de novo, Tyler.</p>
-            <div class="autor">
-                <div class="avatar">J</div>
-                <div>
-                    <div class="autor-nome">João P.</div>
-                    <div class="autor-desc">Atendimento</div>
-                </div>
-            </div>
-        </div>
+.skill-group {
+    background: linear-gradient(160deg, #0c0c0c 0%, #070707 100%);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 26px 26px 30px;
+    transition: 0.35s;
+    position: relative;
+    overflow: hidden;
+}
 
-        <div class="depoimento">
-            <p>Obrigado pela eficiência de sempre.</p>
-            <div class="autor">
-                <div class="avatar">P</div>
-                <div>
-                    <div class="autor-nome">Plínio B.</div>
-                    <div class="autor-desc">Cliente</div>
-                </div>
-            </div>
-        </div>
+.skill-group::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent-strong), transparent);
+    opacity: 0.5;
+    transition: 0.35s;
+}
 
-        <div class="depoimento">
-            <p>Excelente profissional. Sempre demonstra conhecimento técnico, identifica rapidamente a causa dos problemas e apresenta soluções eficientes. É alguém em quem podemos confiar.</p>
-            <div class="autor">
-                <div class="avatar">R</div>
-                <div>
-                    <div class="autor-nome">Rafael M.</div>
-                    <div class="autor-desc">Analista de Infraestrutura</div>
-                </div>
-            </div>
-        </div>
+.skill-group:hover {
+    transform: translateY(-6px);
+    border-color: var(--accent);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.7);
+}
 
-        <div class="depoimento">
-            <p>Tyler sempre foi muito prestativo e objetivo. Seu suporte fez toda a diferença para manter nosso ambiente estável e seguro. Recomendo seu trabalho sem dúvidas.</p>
-            <div class="autor">
-                <div class="avatar">L</div>
-                <div>
-                    <div class="autor-nome">Larissa A.</div>
-                    <div class="autor-desc">Coordenadora de TI</div>
-                </div>
-            </div>
-        </div>
+.skill-group:hover::before {
+    opacity: 1;
+    box-shadow: 0 0 18px var(--accent-glow);
+}
 
-    </div>
-</section>
+.skill-group h3 {
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #d94a4a;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
 
-        <!-- CONTATO -->
-        <section id="contato" class="secao contato">
-            <h2>Contato</h2>
-            <p>
-                Aberto a oportunidades e conversas sobre infraestrutura,
-                backup e segurança da informação. Vamos conversar:
-            </p>
+.skill-group ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
 
-            <div class="contato-links">
-                <a href="mailto:tylercanto23@gmail.com">E-mail</a>
-                <a href="https://www.linkedin.com/in/tyler-canto/" target="_blank" rel="noopener">LinkedIn</a>
-                <a href="https://github.com/tylercanto" target="_blank" rel="noopener">GitHub</a>
-            </div>
-        </section>
+.skill-group li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #ccc;
+    font-size: 16px;
+    transition: 0.25s;
+}
 
-    </main>
+.skill-group li::before {
+    content: "";
+    width: 7px;
+    height: 7px;
+    border-radius: 2px;
+    background: var(--accent-strong);
+    box-shadow: 0 0 8px var(--accent-glow);
+    transform: rotate(45deg);
+    flex-shrink: 0;
+    transition: 0.25s;
+}
 
-    <footer>
-        <a href="#topo" class="voltar-topo">Voltar ao topo</a>
-        <p>&copy; <span id="ano">2026</span> Tyler Canto. Todos os direitos reservados.</p>
-    </footer>
+.skill-group li:hover {
+    color: #fff;
+    transform: translateX(4px);
+}
 
-    <script src="script.js" defer></script>
-</body>
-</html>
+.skill-group li:hover::before {
+    background: #ff4d4d;
+    box-shadow: 0 0 14px rgba(255, 77, 77, 0.8);
+}
+
+/* ==========================
+   FEEDBACKS / DEPOIMENTOS
+========================== */
+
+.feedbacks {
+    background: #030303;
+}
+
+.depoimentos {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 28px;
+}
+
+.depoimento {
+    background: linear-gradient(160deg, #0d0d0d 0%, #080808 100%);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 34px 32px 30px;
+    position: relative;
+    transition: 0.35s;
+    display: flex;
+    flex-direction: column;
+}
+
+.depoimento::before {
+    content: "\201C";
+    position: absolute;
+    top: 6px;
+    left: 24px;
+    font-size: 70px;
+    line-height: 1;
+    color: var(--accent);
+    opacity: 0.5;
+    font-family: Georgia, "Times New Roman", serif;
+}
+
+.depoimento:hover {
+    transform: translateY(-8px);
+    border-color: var(--accent);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.7);
+}
+
+.depoimento p {
+    position: relative;
+    z-index: 1;
+    margin-top: 26px;
+    color: #d5d5d5;
+    font-size: 17px;
+    line-height: 1.8;
+    font-style: italic;
+    flex-grow: 1;
+}
+
+.depoimento .autor {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-top: 26px;
+}
+
+.depoimento .avatar {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--accent-strong), #3a0000);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-weight: 700;
+    font-size: 17px;
+    flex-shrink: 0;
+    box-shadow: 0 0 15px var(--accent-glow);
+}
+
+.depoimento .autor-nome {
+    color: #fff;
+    font-weight: 600;
+    font-size: 15px;
+}
+
+.depoimento .autor-desc {
+    color: var(--text-dim);
+    font-size: 13px;
+}
+
+/* ==========================
+   PROJETOS
+========================== */
+
+.projetos {
+    padding: 90px 12%;
+    border-bottom: 1px solid #111;
+}
+
+.projetos > h2 {
+    font-size: 52px;
+    color: #fff;
+    margin-bottom: 60px;
+    letter-spacing: -1px;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 35px;
+}
+
+/* ==========================
+   CARDS
+========================== */
+
+.card {
+    background: #090909;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 35px;
+    text-decoration: none;
+    color: #fff;
+    transition: 0.4s;
+    position: relative;
+    overflow: hidden;
+}
+
+.card::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 3px;
+    height: 0%;
+    background: var(--accent);
+    transition: 0.4s;
+}
+
+.card:hover::before {
+    height: 100%;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    border-color: var(--accent);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.8);
+}
+
+.card h3 {
+    font-size: 26px;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.card p {
+    color: var(--text-dim);
+    line-height: 1.8;
+}
+
+/* ==========================
+   CONTATO
+========================== */
+
+.contato p {
+    max-width: 700px;
+    font-size: 19px;
+    color: var(--text-muted);
+    margin-bottom: 35px;
+    line-height: 1.8;
+}
+
+.contato-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+}
+
+.contato-links a {
+    padding: 14px 32px;
+    border: 1px solid #333;
+    border-radius: 8px;
+    color: #fff;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.contato-links a:hover {
+    border-color: var(--accent);
+    background: var(--accent);
+    box-shadow: 0 0 25px var(--accent-glow);
+}
+
+/* ==========================
+   DETALHES DO PROJETO
+========================== */
+
+.projeto-detalhes {
+    max-width: var(--max-width);
+    padding: 80px 12%;
+}
+
+.projeto-detalhes h2 {
+    margin-top: 75px;
+    margin-bottom: 25px;
+    font-size: 36px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.section-icon {
+    color: var(--accent);
+    font-size: 28px;
+    display: inline-block;
+    transition: 0.4s;
+    text-shadow: 0 0 15px var(--accent-glow);
+}
+
+.projeto-detalhes h2:hover .section-icon {
+    transform: rotate(45deg);
+    color: var(--accent-strong);
+}
+
+.projeto-detalhes p {
+    max-width: 1000px;
+    color: #b0b0b0;
+    font-size: 18px;
+    line-height: 1.9;
+    margin-bottom: 25px;
+}
+
+.projeto-detalhes ul {
+    margin-left: 25px;
+    color: var(--text-dim);
+    line-height: 2;
+}
+
+.projeto-detalhes li {
+    margin-bottom: 8px;
+}
+
+.projeto-detalhes strong {
+    color: #fff;
+}
+
+/* ==========================
+   TAGS
+========================== */
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.tags span {
+    background: var(--bg-card);
+    border: 1px solid #333;
+    padding: 10px 20px;
+    border-radius: 30px;
+    color: #ccc;
+    transition: 0.3s;
+}
+
+.tags span:hover {
+    border-color: var(--accent);
+    color: #fff;
+    box-shadow: 0 0 20px var(--accent-glow);
+}
+
+/* ==========================
+   BOTAO VOLTAR
+========================== */
+
+.voltar {
+    display: inline-block;
+    margin-top: 60px;
+    padding: 14px 35px;
+    border: 1px solid var(--accent);
+    border-radius: 8px;
+    color: #fff;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.voltar:hover {
+    background: var(--accent);
+    box-shadow: 0 0 25px var(--accent-glow);
+}
+
+/* ==========================
+   RODAPE
+========================== */
+
+footer {
+    padding: 40px 12%;
+    text-align: center;
+    color: #666;
+    border-top: 1px solid #1a1a1a;
+}
+
+footer .voltar-topo {
+    display: inline-block;
+    margin-bottom: 16px;
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+footer .voltar-topo:hover {
+    color: #fff;
+}
+
+footer .footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-bottom: 18px;
+    flex-wrap: wrap;
+}
+
+footer .footer-links a {
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+footer .footer-links a:hover {
+    color: #fff;
+}
+
+/* ==========================
+   RESPONSIVO
+========================== */
+
+@media (max-width: 768px) {
+    .navbar { padding: 16px 6%; }
+    .nav-links { gap: 18px; }
+    .nav-links a { font-size: 14px; }
+
+    .hero { padding: 60px 8%; }
+    .hero h1 { font-size: 45px; }
+    .hero .subtitulo { font-size: 22px; }
+    .hero p.intro { font-size: 17px; }
+
+    .secao,
+    .projetos { padding: 60px 8%; }
+    .secao > h2 { font-size: 34px; }
+    .projetos > h2 { font-size: 38px; }
+
+    .projeto-detalhes { padding: 60px 8%; }
+    .projeto-detalhes h2 { font-size: 28px; }
+}
