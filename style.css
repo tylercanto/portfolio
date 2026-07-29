@@ -293,6 +293,94 @@ a {
 }
 
 /* ==========================
+   FEEDBACKS / DEPOIMENTOS
+========================== */
+
+.feedbacks {
+    background: #030303;
+}
+
+.depoimentos {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 28px;
+}
+
+.depoimento {
+    background: linear-gradient(160deg, #0d0d0d 0%, #080808 100%);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 34px 32px 30px;
+    position: relative;
+    transition: 0.35s;
+    display: flex;
+    flex-direction: column;
+}
+
+.depoimento::before {
+    content: "\201C";
+    position: absolute;
+    top: 6px;
+    left: 24px;
+    font-size: 70px;
+    line-height: 1;
+    color: var(--accent);
+    opacity: 0.5;
+    font-family: Georgia, "Times New Roman", serif;
+}
+
+.depoimento:hover {
+    transform: translateY(-8px);
+    border-color: var(--accent);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.7);
+}
+
+.depoimento p {
+    position: relative;
+    z-index: 1;
+    margin-top: 26px;
+    color: #d5d5d5;
+    font-size: 17px;
+    line-height: 1.8;
+    font-style: italic;
+    flex-grow: 1;
+}
+
+.depoimento .autor {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-top: 26px;
+}
+
+.depoimento .avatar {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--accent-strong), #3a0000);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-weight: 700;
+    font-size: 17px;
+    flex-shrink: 0;
+    box-shadow: 0 0 15px var(--accent-glow);
+}
+
+.depoimento .autor-nome {
+    color: #fff;
+    font-weight: 600;
+    font-size: 15px;
+}
+
+.depoimento .autor-desc {
+    color: var(--text-dim);
+    font-size: 13px;
+}
+
+/* ==========================
    PROJETOS
 ========================== */
 
