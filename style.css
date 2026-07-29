@@ -201,26 +201,95 @@ a {
     margin-bottom: 22px;
 }
 
-.sobre .destaques {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
-    margin-top: 30px;
+/* ==========================
+   SKILLS (competencias)
+========================== */
+
+.skills {
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 22px;
 }
 
-.sobre .destaques span {
-    background: var(--bg-card);
-    border: 1px solid #333;
-    padding: 10px 20px;
-    border-radius: 30px;
-    color: #ccc;
-    transition: 0.3s;
+.skill-group {
+    background: linear-gradient(160deg, #0c0c0c 0%, #070707 100%);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 26px 26px 30px;
+    transition: 0.35s;
+    position: relative;
+    overflow: hidden;
 }
 
-.sobre .destaques span:hover {
+.skill-group::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent-strong), transparent);
+    opacity: 0.5;
+    transition: 0.35s;
+}
+
+.skill-group:hover {
+    transform: translateY(-6px);
     border-color: var(--accent);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.7);
+}
+
+.skill-group:hover::before {
+    opacity: 1;
+    box-shadow: 0 0 18px var(--accent-glow);
+}
+
+.skill-group h3 {
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #d94a4a;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.skill-group ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.skill-group li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #ccc;
+    font-size: 16px;
+    transition: 0.25s;
+}
+
+.skill-group li::before {
+    content: "";
+    width: 7px;
+    height: 7px;
+    border-radius: 2px;
+    background: var(--accent-strong);
+    box-shadow: 0 0 8px var(--accent-glow);
+    transform: rotate(45deg);
+    flex-shrink: 0;
+    transition: 0.25s;
+}
+
+.skill-group li:hover {
     color: #fff;
-    box-shadow: 0 0 20px var(--accent-glow);
+    transform: translateX(4px);
+}
+
+.skill-group li:hover::before {
+    background: #ff4d4d;
+    box-shadow: 0 0 14px rgba(255, 77, 77, 0.8);
 }
 
 /* ==========================
@@ -435,6 +504,19 @@ footer {
     text-align: center;
     color: #666;
     border-top: 1px solid #1a1a1a;
+}
+
+footer .voltar-topo {
+    display: inline-block;
+    margin-bottom: 16px;
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+footer .voltar-topo:hover {
+    color: #fff;
 }
 
 footer .footer-links {
