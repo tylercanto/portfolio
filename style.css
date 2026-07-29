@@ -292,89 +292,58 @@ a {
     box-shadow: 0 0 14px rgba(255, 77, 77, 0.8);
 }
 
-/* ===============================
-   FEEDBACKS
-================================ */
+<!-- FEEDBACKS -->
+        <section id="feedbacks" class="secao feedbacks">
+            <h2>Feedbacks</h2>
 
-.feedbacks {
-    width: 100%;
-}
+            <div class="depoimentos">
 
-.depoimentos {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 25px;
-    align-items: stretch;
-}
+                <div class="depoimento">
+                    <p>O que você fez agora, foi perfeito. Evidenciou o problema de forma incontestável.</p>
+                    <div class="autor">
+                        <div class="avatar">C</div>
+                        <div>
+                            <div class="autor-nome">Cliente corporativo</div>
+                            <div class="autor-desc">Suporte técnico</div>
+                        </div>
+                    </div>
+                </div>
 
-.depoimento {
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 15px;
-    padding: 25px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    min-height: 260px;
-    transition: transform .3s ease, border-color .3s ease;
-}
+                <div class="depoimento">
+                    <p>Seu atendimento é diferenciado, parabéns!!! Você entende do assunto!</p>
+                    <div class="autor">
+                        <div class="avatar">A</div>
+                        <div>
+                            <div class="autor-nome">Angelo C. S.</div>
+                            <div class="autor-desc">Cliente</div>
+                        </div>
+                    </div>
+                </div>
 
-.depoimento:hover {
-    transform: translateY(-5px);
-    border-color: rgba(255, 255, 255, 0.25);
-}
+                <div class="depoimento">
+                    <p>Quando vc me atente é só alegria. Obrigado de novo, Tyler.</p>
+                    <div class="autor">
+                        <div class="avatar">C</div>
+                        <div>
+                            <div class="autor-nome">Cliente corporativo</div>
+                            <div class="autor-desc">Atendimento</div>
+                        </div>
+                    </div>
+                </div>
 
-.depoimento p {
-    line-height: 1.7;
-    margin: 0;
-    font-size: 15px;
-}
+                <div class="depoimento">
+                    <p>Obrigado pela eficiência de sempre.</p>
+                    <div class="autor">
+                        <div class="avatar">P</div>
+                        <div>
+                            <div class="autor-nome">Plínio B.</div>
+                            <div class="autor-desc">Cliente</div>
+                        </div>
+                    </div>
+                </div>
 
-.autor {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    margin-top: 25px;
-}
-
-.avatar {
-    width: 45px;
-    height: 45px;
-    min-width: 45px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
-    font-size: 18px;
-}
-
-.autor-nome {
-    font-weight: 600;
-    font-size: 15px;
-}
-
-.autor-desc {
-    font-size: 13px;
-    opacity: .7;
-    margin-top: 3px;
-}
-
-@media(max-width: 1100px) {
-    .depoimentos {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media(max-width: 700px) {
-    .depoimentos {
-        grid-template-columns: 1fr;
-    }
-
-    .depoimento {
-        min-height: auto;
-    }
-}
+            </div>
+        </section>
 
 /* ==========================
    CARDS
